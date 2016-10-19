@@ -22,7 +22,7 @@ module.exports.getRequireLoader = function(filePath, moduleName, inline) {
 
   var result = [
     'loadChildren: () => new Promise(function (resolve) {',
-    '  (require as any).ensure([], function (require: any) {',
+    '  require.ensure([], function () {',
     '    resolve(' + requireString + ');',
     '  });',
     '})'
